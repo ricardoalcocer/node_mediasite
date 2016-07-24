@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Streaming experiment</title>
+    <script type="text/javascript">
+        function playvideo(vid){
+            var baseURL = 'http://localhost:9999/video/get_movie/';
+            var vidplayer = document.getElementById('videoplayer');
+            videojs(vidplayer).src({"type":"video/mp4", "src":baseURL + vid});
+        }
+    </script>
+
+    <link href="http://vjs.zencdn.net/5.10.7/video-js.css" rel="stylesheet">
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+</head>
+
+<body>
+<h1><%= JSON.parse(data).title %></h1>
+
+<ul>
+  <% JSON.parse(data).media.forEach(function(item,key){ %>
+    <li><a href="javascript:playvideo('<%=item.file%>')"><%=item.title%></a></li>
+  <% }) %>
+</ul>
+
+<!--
+<ul>
+    <li><a href="javascript:playvideo('PwF-Teaser1.mp4')">PwF-Teaser1.mp4</a></li>
+    <li><a href="javascript:playvideo('44422.mov')">44422.mov</a></li>
+    <li><a href="javascript:playvideo('alco.mov')">alco.mov</a></li>
+</ul> -->
+
+<!-- <video id="videoplayer" src="http://localhost:8888/PwF-Teaser1.mp4" controls width="500"></video>
+</body> -->
+
+<video id="videoplayer" class="video-js" controls preload="auto" width="640" height="264"
+  poster="/images/guitarepiphonewallpaperhdwallpaper.jpg" data-setup="{}">
+  <p class="vjs-no-js">
+    To view this video please enable JavaScript, and consider upgrading to a web browser that
+    <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+  </p>
+</video>
+
+  <script src="http://vjs.zencdn.net/5.10.7/video.js"></script>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Streaming experiment</title>
+<script type="text/javascript">
+    function playvideo(vid){
+        var baseURL = 'http://localhost:8888/';
+        var vidplayer = document.getElementById('videoplayer');
+        vidplayer.src=baseURL + vid;
+    }
+</script>
+
+</head>
+
+<body>
+<h1>Welcome</h1>
+
+<ul>
+    <li><a href="javascript:playvideo('PwF-Teaser1.mp4')">PwF-Teaser1.mp4</a></li>
+    <li><a href="javascript:playvideo('44422.mov')">44422.mov</a></li>
+    <li><a href="javascript:playvideo('alco.mov')">alco.mov</a></li>
+</ul>
+
+<video id="videoplayer" src="http://localhost:8888/PwF-Teaser1.mp4" controls width="500"></video>
+</body>
+</html>

@@ -1,0 +1,26 @@
+[
+    {
+        "title" : "DVD 1",
+        "cover" : "http://ia.media-imdb.com/images/M/MV5BMTU2ODQ1OTUyOF5BMl5BanBnXkFtZTgwMjc2MzE1OTE@._V1_UX122_CR0,0,122,176_AL_.jpg",
+        "media" : [
+            {
+                "title" : "Alco and Greg",
+                "file"   : "44422.mov"
+            },
+            {
+                "title" : "Guitar",
+                "file"   : "PwF-Teaser1.mp4"
+            }
+        ]
+    },
+    {
+        "title" : "DVD 2",
+                "cover" : "http://ia.media-imdb.com/images/M/MV5BZGJiYjk3MWMtNjMwNC00MzBkLWE0ZmYtNDljMDgxYTUzNDg1XkEyXkFqcGdeQXVyNDk1NDU4Njc@._V1_UY176_CR96,0,122,176_AL_.jpg",
+        "media" : [
+            {
+                "title" : "Alco and Greg 2",
+                "file"   : "alco.mov"
+            }
+        ]
+    }
+]
