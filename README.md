@@ -1,6 +1,6 @@
 ![](logo.png)
 
-** *A YouTube-like video streaming server and web client written in Node.js.* **
+**A YouTube-like video streaming server and web client written in Node.js.**
 
 I built this out of sheer curiosity after reading [this Gist](https://gist.github.com/paolorossi/1993068).  It looked like an interesting idea, so I started playing with it and over a weekend decided to turn this into an actual media client and server project.
 
