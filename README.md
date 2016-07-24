@@ -1,4 +1,4 @@
-# Node Media Site
+![](logo.png)
 
 ## Start Server
 
