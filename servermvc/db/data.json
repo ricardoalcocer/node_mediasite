@@ -5,11 +5,13 @@
         "media" : [
             {
                 "title" : "Alco and Greg",
-                "file"   : "44422.mov"
+                "file"  : "44422.mov",
+                "still" : "http://www.hdwallpapers.in/walls/ios_7_galaxy-wide.jpg"
             },
             {
                 "title" : "Guitar",
-                "file"   : "PwF-Teaser1.mp4"
+                "file"   : "PwF-Teaser1.mp4",
+                "still" : "http://media.idownloadblog.com/wp-content/uploads/2014/09/Delphox-Designs-iOS-8-Desktop-Wallpaper-5.jpg"
             }
         ]
     },
@@ -19,7 +21,8 @@
         "media" : [
             {
                 "title" : "Alco and Greg 2",
-                "file"   : "alco.mov"
+                "file"   : "alco.mov",
+                "still" : "http://hd.wallpaperswide.com/thumbs/ios_5_wallpaper___water_drops-t2.jpg"
             }
         ]
     }

@@ -39,7 +39,7 @@
             <!-- <h3>Chapters</h3> -->
             <ul>
               <% JSON.parse(data).media.forEach(function(item,key){ %>
-                <li><a href="javascript:playvideo('<%=item.file%>')"><%=item.title%></a></li>
+                <li><a href="javascript:playVideo('<%=item.file%>','<%=item.still%>')"><%=item.title%></a></li>
               <% }) %>
             </ul>
           </div>
@@ -82,4 +82,8 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="http://vjs.zencdn.net/5.10.7/video.js"></script>
+
+  <script>
+    setFirstVideo('<%= JSON.parse(data).media[0].file %>','<%= JSON.parse(data).media[0].still %>');
+  </script>
 </html>
