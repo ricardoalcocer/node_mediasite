@@ -1,49 +1,75 @@
 <html>
-<head>
+  <head>
     <title>Streaming experiment</title>
-    <script type="text/javascript">
-        function playvideo(vid){
-            var baseURL = 'http://localhost:9999/video/get_movie/';
-            var vidplayer = document.getElementById('videoplayer');
-            videojs(vidplayer).src({"type":"video/mp4", "src":baseURL + vid});
-        }
-    </script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link href="http://vjs.zencdn.net/5.10.7/video-js.css" rel="stylesheet">
-    <!-- If you'd like to support IE8 -->
-    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-</head>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-<body>
-<!-- <h1>Welcome</h1>
+  </head>
 
-<ul>
-    <li><a href="javascript:playvideo('PwF-Teaser1.mp4')">PwF-Teaser1.mp4</a></li>
-    <li><a href="javascript:playvideo('44422.mov')">44422.mov</a></li>
-    <li><a href="javascript:playvideo('alco.mov')">alco.mov</a></li>
-</ul> -->
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
 
-<div style="overflow: auto;float:left;width: 100%;height: 100%;">
-<% JSON.parse(data).forEach(function(item,key){ %>
+    </nav>
 
-  <div style="width: 200px;height: 300px;margin: 0px 10px 10px 0px;display: inline-block;">
-    <a href="movie/<%=encodeURIComponent(item.title)%>"><h1><%=item.title%></h1>
-    <img src="<%=item.cover%>"/></a>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row" style="padding-top: 100px">
+        <div class="col-md-4">
+            <div style="width: 200px;height: 350px;margin: 0px 10px 10px 0px;display: inline-block;">
+              <a href="movie/<%= JSON.parse(data)[0].title %>">
+                <img src="<%=JSON.parse(data)[0].cover%>"/>
+                <p><%=JSON.parse(data)[0].title%></p>
+              </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div style="width: 200px;height: 350px;margin: 0px 10px 10px 0px;display: inline-block;">
+            <a href="movie/<%= JSON.parse(data)[1].title %>">
+              <img src="<%=JSON.parse(data)[1].cover%>"/>
+              <p><%=JSON.parse(data)[1].title%></p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div style="width: 200px;height: 350px;margin: 0px 10px 10px 0px;display: inline-block;">
+            <a href="movie/<%= JSON.parse(data)[1].title %>">
+              <img src="<%=JSON.parse(data)[1].cover%>"/>
+              <p><%=JSON.parse(data)[1].title%></p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="padding-top: 100px">
+        <div class="col-md-4">
+            <div style="width: 200px;height: 350px;margin: 0px 10px 10px 0px;display: inline-block;">
+              <a href="movie/<%= JSON.parse(data)[0].title %>">
+                <img src="<%=JSON.parse(data)[0].cover%>"/>
+                <p><%=JSON.parse(data)[0].title%></p>
+              </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div style="width: 200px;height: 350px;margin: 0px 10px 10px 0px;display: inline-block;">
+            <a href="movie/<%= JSON.parse(data)[1].title %>">
+              <img src="<%=JSON.parse(data)[1].cover%>"/>
+              <p><%=JSON.parse(data)[1].title%></p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div style="width: 200px;height: 350px;margin: 0px 10px 10px 0px;display: inline-block;">
+            <a href="movie/<%= JSON.parse(data)[1].title %>">
+              <img src="<%=JSON.parse(data)[1].cover%>"/>
+              <p><%=JSON.parse(data)[1].title%></p>
+            </a>
+          </div>
+        </div>
+      </div>
   </div>
 
-<% }) %>
-</div>
-
-<!-- <video id="videoplayer" src="http://localhost:8888/PwF-Teaser1.mp4" controls width="500"></video>
-</body> -->
-
-<!-- <video id="videoplayer" class="video-js" controls preload="auto" width="640" height="264"
-  poster="/images/guitarepiphonewallpaperhdwallpaper.jpg" data-setup="{}">
-  <p class="vjs-no-js">
-    To view this video please enable JavaScript, and consider upgrading to a web browser that
-    <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-  </p>
-</video> -->
-
-  <script src="http://vjs.zencdn.net/5.10.7/video.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </html>

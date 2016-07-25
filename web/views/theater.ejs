@@ -1,45 +1,85 @@
 <html>
-<head>
-    <title>Streaming experiment</title>
-    <script type="text/javascript">
-        function playvideo(vid){
-            var baseURL = 'http://localhost:9999/video/get_movie/';
-            var vidplayer = document.getElementById('videoplayer');
-            videojs(vidplayer).src({"type":"video/mp4", "src":baseURL + vid});
-        }
-    </script>
+  <head>
+      <title>Streaming experiment</title>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link href="http://vjs.zencdn.net/5.10.7/video-js.css" rel="stylesheet">
-    <!-- If you'd like to support IE8 -->
-    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-</head>
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-<body>
-<h1><%= JSON.parse(data).title %></h1>
+      <script type="text/javascript" src="/js/theater_navigate.js"></script>
 
-<ul>
-  <% JSON.parse(data).media.forEach(function(item,key){ %>
-    <li><a href="javascript:playvideo('<%=item.file%>')"><%=item.title%></a></li>
-  <% }) %>
-</ul>
+      <link href="http://vjs.zencdn.net/5.10.7/video-js.css" rel="stylesheet">
+      <!-- If you'd like to support IE8 -->
+      <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  </head>
 
-<!--
-<ul>
-    <li><a href="javascript:playvideo('PwF-Teaser1.mp4')">PwF-Teaser1.mp4</a></li>
-    <li><a href="javascript:playvideo('44422.mov')">44422.mov</a></li>
-    <li><a href="javascript:playvideo('alco.mov')">alco.mov</a></li>
-</ul> -->
+  <body>
 
-<!-- <video id="videoplayer" src="http://localhost:8888/PwF-Teaser1.mp4" controls width="500"></video>
-</body> -->
 
-<video id="videoplayer" class="video-js" controls preload="auto" width="640" height="264"
-  poster="/images/guitarepiphonewallpaperhdwallpaper.jpg" data-setup="{}">
-  <p class="vjs-no-js">
-    To view this video please enable JavaScript, and consider upgrading to a web browser that
-    <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-  </p>
-</video>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
 
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" >
+      <div class="container">
+        <h3><%= JSON.parse(data).title %></h3>
+        <div class="row">
+          <div class="col-md-8">
+            <video id="videoplayer" class="video-js" controls preload="auto" width="640" height="264"
+              poster="/images/guitarepiphonewallpaperhdwallpaper.jpg" data-setup="{}">
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+              </p>
+            </video>
+          </div>
+          <div class="col-md-4">
+            <!-- <h3>Chapters</h3> -->
+            <ul>
+              <% JSON.parse(data).media.forEach(function(item,key){ %>
+                <li><a href="javascript:playvideo('<%=item.file%>')"><%=item.title%></a></li>
+              <% }) %>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <!-- <div class="row">
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr> -->
+
+      <footer>
+        <p>&copy; 2016 Company, Inc.</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+
+  <script src="https://code.jquery.com/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="http://vjs.zencdn.net/5.10.7/video.js"></script>
 </html>
